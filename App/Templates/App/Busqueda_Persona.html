@@ -1,8 +1,9 @@
 {% extends "App/Base.html" %}
 
 {% load static %}
+
 {% block titulo %}
-<title> COMPRAS </title>
+<title> BUSCAR </title>
 {% endblock %}
 
 {% block Parte_Superior %}
@@ -10,16 +11,13 @@
 {% endblock %}
 
 {% block Parte_Central %}
-<form action="{% url 'Compras' %}" method="POST"> {% csrf_token %}
+<form action="{% url 'buscar' %}" method="GET">
 
-    <table>
+    <input type="text"  name="nombre" id="nombre">
 
-        {{ form.as_table }}
+    <input type="submit" valor="buscar">
+</form>
 
-    </table>
-
-    <input type="submit" value="Registrar">
-
-    </form>
+{{ mensaje }}
 
 {% endblock %}

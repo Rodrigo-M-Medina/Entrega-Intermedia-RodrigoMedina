@@ -1,9 +1,12 @@
 {% extends "App/Base.html" %}
 
 {% load static %}
+{% block titulo %}
+<title> ANIMALES </title>
+{% endblock %}
 
 {% block Parte_Superior %}
-<a class="btn btn-primary" href={% url 'Inicio' %}>Cargar Personas</a>
+<a class="btn btn-primary" href={% url 'Inicio' %}>Inicio</a>
 {% endblock %}
 
 {% block Parte_Central %}
@@ -18,20 +21,4 @@
     <input type="submit" value="Registrar">
 
     </form>
-{% endblock %}
-
-{% block Mensaje %}
-
-{% endblock %}
-
-{% block Parte_Central_Abajo_Izquierdo %}
-                       
-{% endblock %}
-
-{% block Parte_Central_Abajo_Central %}
-                           
-{% endblock %}
-
-{% block Parte_Central_Abajo_Derecho %}
-
 {% endblock %}

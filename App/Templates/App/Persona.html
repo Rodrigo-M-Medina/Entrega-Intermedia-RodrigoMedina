@@ -2,6 +2,10 @@
 
 {% load static %}
 
+{% block titulo %}
+<title> PERSONAS</title>
+{% endblock %}
+
 {% block Parte_Superior %}
 <a class="btn btn-primary" href={% url 'Inicio' %}>Inicio</a>
 {% endblock %}
@@ -18,21 +22,5 @@
     <input type="submit" value="Registrar">
 
     </form>
-
-{% endblock %}
-
-{% block Mensaje %}
-
-{% endblock %}
-
-{% block Parte_Central_Abajo_Izquierdo %}
-                         
-{% endblock %}
-
-{% block Parte_Central_Abajo_Central %}
-                         
-{% endblock %}
-
-{% block Parte_Central_Abajo_Derecho %}
 
 {% endblock %}

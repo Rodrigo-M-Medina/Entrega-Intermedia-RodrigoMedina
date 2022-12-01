@@ -1,0 +1,27 @@
+{% extends "App/Base.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<title> Resultado </title>
+{% endblock %}
+
+{% block Parte_Superior %}
+<a class="btn btn-primary" href={% url 'Inicio' %}>Inicio</a>
+{% endblock %}
+
+{% block Parte_Central %}
+
+{% if persona %}
+<ul>
+  {% for persona in personas %}
+     <li> {{ persona.nombre }}</li>
+     <li> {{ persona.apellido }}</li>
+     <br>
+  {% endfor %}
+</ul>
+{% else %}
+<p> No existe esa persona en la base de datos</p>
+{% endif %}
+
+{% endblock %}

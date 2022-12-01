@@ -45,20 +45,18 @@ def formulario_animal(request):
         form=Form_Animal()
     return render(request, "App/Animal.html", {"form":form})
 
-
-def busqueda(request):
-    return render(request, "App/Buscar.html")
-
+def busqueda_persona(request):
+    return render (request, "App/Busqueda_Persona.html")
 
 def buscar(request):
-
+    
     if request.GET["nombre"]:
 
-        nombre=request.GET["nombre"]
+        persona=request.GET["nombre"]
 
-        nombre=Animal.objects.filter(nombre__icontains=nombre)
-        return render(request,"App/Resultado.html", {"nombre":nombre} )
+        personas=Persona.objects.filter(nombre=persona)
+
+        return render(request, "App/Buscar_Resultado.html", {"personas":personas})
+
     else:
-        return render(request, "App/Buscar.html", {"mensaje":"No existe"})
-
-    
+        return render (request, "App/Busqueda_Persona.html", {"mensaje":"Esa Persona no existe en la base de datos"})

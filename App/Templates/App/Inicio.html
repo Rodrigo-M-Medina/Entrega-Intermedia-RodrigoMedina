@@ -1,12 +1,15 @@
 {% extends "App/Base.html" %}
 
 {% load static %}
+{% block titulo %}
+<title> INICIO </title>
+{% endblock %}
 
 {% block Parte_Superior %}
 <a class="btn btn-primary" href={% url 'Persona' %}>Cargar Personas</a>
 <a class="btn btn-primary" href={% url 'Compras' %}>Cargar Compras</a>
 <a class="btn btn-primary" href={% url 'Animal' %}>Animal</a>
-<a class="btn btn-primary" href={% url 'busqueda' %}>buscar</a>
+<a class="btn btn-primary" href={% url 'Busqueda_Persona' %}>buscar</a>
 {% endblock %}
 
 {% block Parte_Central %}
