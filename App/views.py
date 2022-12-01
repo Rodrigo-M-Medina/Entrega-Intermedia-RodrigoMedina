@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from App.forms import Form_Persona, Form_Compras
-from .models import Persona, Compras
+from App.forms import Form_Persona, Form_Compras, Form_Animal
+from .models import Persona, Compras, Animal
 from django.http import HttpResponse
 
 
@@ -18,20 +18,47 @@ def formulario_personas(request):
             return render(request, "App/Inicio.html")
     else:
         form=Form_Persona()
-    return render(request, "App/Formulario.html", {"form":form})
+    return render(request, "App/Persona.html", {"form":form})
 
 def formulario_compras(request):
     if request.method=='POST':
         form = Form_Compras(request.POST)
         if form.is_valid():
             informacion=form.cleaned_data
-            persona1= Compras(nombre=informacion['nombre'], edad=informacion['edad'])
+            persona1= Compras(producto=informacion['producto'], valor=informacion['valor'])
             persona1.save()
             return render(request, "App/Inicio.html")
     else:
         form=Form_Compras()
-    return render(request, "App/Compras.html", {"form":form})       
-   
+    return render(request, "App/Compras.html", {"form":form})   
 
+
+def formulario_animal(request):
+    if request.method=='POST':
+        form = Form_Animal(request.POST)
+        if form.is_valid():
+            informacion=form.cleaned_data
+            persona1= Animal(nombre=informacion['nombre'], raza=informacion['raza'], edad=informacion['edad'])
+            persona1.save()
+            return render(request, "App/Inicio.html")
+    else:
+        form=Form_Animal()
+    return render(request, "App/Animal.html", {"form":form})
+
+
+def busqueda(request):
+    return render(request, "App/Buscar.html")
+
+
+def buscar(request):
+
+    if request.GET["nombre"]:
+
+        nombre=request.GET["nombre"]
+
+        nombre=Animal.objects.filter(nombre__icontains=nombre)
+        return render(request,"App/Resultado.html", {"nombre":nombre} )
+    else:
+        return render(request, "App/Buscar.html", {"mensaje":"No existe"})
 
     

@@ -3,11 +3,11 @@
 {% load static %}
 
 {% block Parte_Superior %}
-<a class="btn btn-primary" href={% url 'Inicio' %}>Inicio</a>
+<a class="btn btn-primary" href={% url 'Inicio' %}>Cargar Personas</a>
 {% endblock %}
 
 {% block Parte_Central %}
-<form action="{% url 'Persona' %}" method="POST"> {% csrf_token %}
+<form action="{% url 'Animal' %}" method="POST"> {% csrf_token %}
 
     <table>
 
@@ -18,7 +18,6 @@
     <input type="submit" value="Registrar">
 
     </form>
-
 {% endblock %}
 
 {% block Mensaje %}
@@ -26,11 +25,11 @@
 {% endblock %}
 
 {% block Parte_Central_Abajo_Izquierdo %}
-                         
+                       
 {% endblock %}
 
 {% block Parte_Central_Abajo_Central %}
-                         
+                           
 {% endblock %}
 
 {% block Parte_Central_Abajo_Derecho %}

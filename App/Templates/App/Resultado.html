@@ -6,25 +6,36 @@
 <a class="btn btn-primary" href={% url 'Persona' %}>Cargar Personas</a>
 <a class="btn btn-primary" href={% url 'Compras' %}>Cargar Compras</a>
 <a class="btn btn-primary" href={% url 'Animal' %}>Animal</a>
-<a class="btn btn-primary" href={% url 'busqueda' %}>buscar</a>
 {% endblock %}
 
 {% block Parte_Central %}
-<h1 class="mb-5">Pagina de Inicio</h1>
+  {% if cursos %}
+     <ul>
+    {% for anima in cursos %}
+        <li>{{Animal.nombre}}</li>
+        <li>{{Animal.Raza}}</li>
+        <br>
+    {% endfor %}
+    </ul>
+
+  {% else %}
+
+<p> No existe </p>
+   {% endif %}
 {% endblock %}
 
 {% block Mensaje %}
-<h1>Ver Mensaje</h1>
+<h1></h1>
 {% endblock %}
 
 {% block Parte_Central_Abajo_Izquierdo %}
-<h1>PRUEBA</h1>                           
+<h1></h1>                           
 {% endblock %}
 
 {% block Parte_Central_Abajo_Central %}
-<h1> TEST </h1>                           
+<h1> </h1>                           
 {% endblock %}
 
 {% block Parte_Central_Abajo_Derecho %}
-<h1> TEST 2</h1>
+<h1> </h1>
 {% endblock %}
