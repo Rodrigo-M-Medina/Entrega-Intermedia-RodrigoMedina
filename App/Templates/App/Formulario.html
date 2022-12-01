@@ -3,15 +3,26 @@
 {% load static %}
 
 {% block Parte_Superior %}
-<a class="btn btn-primary" href={% url 'inicio' %}>Inicio</a>
+<a class="btn btn-primary" href={% url 'Inicio' %}>Inicio</a>
 {% endblock %}
 
 {% block Parte_Central %}
-<h1 class="mb-5">Pagina de Formularios</h1>
+<form action="{% url 'Formulario' %}" method="POST"> {% csrf_token %}
+   
+    <table>
+
+        {{ form.as_table}}
+
+    </table>
+
+    <input type="submit" value="Registrar">
+
+</form>
+
 {% endblock %}
 
 {% block Mensaje %}
-<h1>-------</h1>
+<h1>{{ mensaje }}</h1>
 {% endblock %}
 
 {% block Parte_Central_Abajo_Izquierdo %}
