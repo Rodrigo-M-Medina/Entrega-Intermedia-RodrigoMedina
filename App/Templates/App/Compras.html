@@ -7,30 +7,30 @@
 {% endblock %}
 
 {% block Parte_Central %}
-<form action="{% url 'Formulario' %}" method="POST"> {% csrf_token %}
-   
+<form action="{% url 'Compras' %}" method="POST"> {% csrf_token %}
+
     <table>
 
-        {{ form.as_table}}
+        {{ form.as_table }}
 
     </table>
 
     <input type="submit" value="Registrar">
 
-</form>
+    </form>
 
 {% endblock %}
 
 {% block Mensaje %}
-<h1>{{ mensaje }}</h1>
+
 {% endblock %}
 
 {% block Parte_Central_Abajo_Izquierdo %}
-<h1>-----</h1>                           
+                         
 {% endblock %}
 
 {% block Parte_Central_Abajo_Central %}
-<h1>------ </h1>                           
+                         
 {% endblock %}
 
 {% block Parte_Central_Abajo_Derecho %}
