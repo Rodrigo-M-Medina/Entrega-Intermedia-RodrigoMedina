@@ -12,16 +12,29 @@
 
 {% block Parte_Central %}
 
-{% if persona %}
+<h1 class="mb-5">Resultados de busqueda</h1>
+
+{% endblock %}
+
+{% block Parte_Central_Abajo_Izquierdo %}
+
+{% if personas %}
+
 <ul>
+  <h3> personas </h3>
   {% for persona in personas %}
-     <li> {{ persona.nombre }}</li>
-     <li> {{ persona.apellido }}</li>
+     <li>nombre: {{ persona.nombre }}</li>
+     <li>apellido: {{ persona.apellido }}</li>
+     <li>edad: {{ persona.edad }}</li>
+     <li>email: {{ persona.email }}</li>
      <br>
   {% endfor %}
 </ul>
+
 {% else %}
 <p> No existe esa persona en la base de datos</p>
-{% endif %}
+
+{% endif %}     
 
 {% endblock %}
+

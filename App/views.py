@@ -54,9 +54,9 @@ def buscar(request):
 
         persona=request.GET["nombre"]
 
-        personas=Persona.objects.filter(nombre=persona)
+        personas=Persona.objects.filter(nombre__icontains=persona)
 
         return render(request, "App/Buscar_Resultado.html", {"personas":personas})
 
     else:
-        return render (request, "App/Busqueda_Persona.html", {"mensaje":"Esa Persona no existe en la base de datos"})
+        return render (request, "App/Busqueda_Persona.html", {"mensaje":"Esa Persona no existe en la base de datos"})    

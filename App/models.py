@@ -13,10 +13,6 @@ class Compras(models.Model):
     producto=models.CharField(max_length=50)
     valor=models.FloatField()
 
-class Pregunta(models.Model):
-    correcto=models.IntegerField()
-    incorrecto=models.IntegerField()
-
 class Animal(models.Model):
     nombre=models.CharField(max_length=50)
     raza=models.CharField(max_length=50)
